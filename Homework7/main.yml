@@ -1,0 +1,22 @@
+- hosts: all
+  become: yes
+  tasks: 
+    - name: Install the latest version of Apache
+      ansible.builtin.dnf:
+        name: httpd
+        state: latest
+          
+
+    - name: Enable the Apache2 module wsgi
+      community.general.apache2_module:
+        state: present
+        name: wsgi
+
+    - name: Create users 
+      ansible.builtin.user:
+        name: 
+          - jenny
+          - rose
+          - jisoo
+          - lisa
+     

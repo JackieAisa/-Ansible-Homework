@@ -1,20 +1,20 @@
 - hosts: all
   become: yes
   tasks: 
-    - name: Install the latest version of Apache
+    - name: Install httpd
       ansible.builtin.dnf:
         name: httpd
         state: latest
-          
-
-    - name: Enable the Apache2 module wsgi
-      community.general.apache2_module:
-        state: present
-        name: wsgi
+        
+    - name: Start httpd service
+      ansible.builtin.service:
+        name: httpd
+        state: started
 
     - name: Create users 
       ansible.builtin.user:
-        name: 
+        name: "{{ item }}"
+      loop:  
           - jenny
           - rose
           - jisoo

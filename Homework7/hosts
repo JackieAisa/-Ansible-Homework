@@ -1,3 +1,4 @@
-vm1 ansible_host=13.59.20.11
-vm2 ansible_host=13.58.94.104
-vm3 ansible_host=3.145.45.255
+
+vm1 ansible_host=ec2-user@13.59.20.11
+vm2 ansible_host=ec2-user@13.58.94.104
+vm3 ansible_host=ec2-user@3.145.45.255
